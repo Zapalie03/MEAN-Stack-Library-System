@@ -1,0 +1,61 @@
+### Register new user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Admin User",
+  "email": "admin@library.com",
+  "password": "password123",
+  "role": "admin"
+}
+
+### Login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@library.com",
+  "password": "password123"
+}
+
+### Get current user
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Create a book
+POST http://localhost:3000/api/books
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "title": "Introduction to Programming",
+  "author": "John Smith",
+  "isbn": "978-1234567890",
+  "publishedYear": 2023,
+  "genre": "Technology",
+  "copiesAvailable": 5,
+  "totalCopies": 5,
+  "description": "A comprehensive guide to programming basics"
+}
+
+### Get all books
+GET http://localhost:3000/api/books
+
+### Create a member
+POST http://localhost:3000/api/members
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice@example.com",
+  "phone": "1234567890",
+  "address": {
+    "street": "123 Main St",
+    "city": "Cityville",
+    "state": "State",
+    "zipCode": "12345"
+  },
+  "membershipType": "Regular"
+}
